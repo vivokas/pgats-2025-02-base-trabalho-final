@@ -22,11 +22,6 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Criar .env
-      run: |
-        echo "BASE_URL_REST=${{ secrets.BASE_URL_REST }}" >> .env
-        echo "BASE_URL_GRAPHQL=${{ secrets.BASE_URL_GRAPHQL }}" >> .env
-
     - name: Subir a API 
       run: npm start &
     
