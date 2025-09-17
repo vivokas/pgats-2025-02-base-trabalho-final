@@ -27,14 +27,14 @@ jobs:
         echo "BASE_URL_REST=${{ secrets.BASE_URL_REST }}" >> .env
         echo "BASE_URL_GRAPHQL=${{ secrets.BASE_URL_GRAPHQL }}" >> .env
 
-    - name: Rodar os testes de API via Controller
-      run: npm run test-controller
+    - name: Esperar a API REST estar Funcionando
+      run: sleep 5
 
     - name: Subir a API 
       run: npm start &
 
-    - name: Esperar a API estar Funcionando
-      run: sleep 5
+    - name: Rodar os testes de API via Controller
+      run: npm run test-controller
 
     - name: Rodar os testes de API via HTTP
       run: npm run test-external
@@ -43,7 +43,7 @@ jobs:
       run: npm run start-graphql &
 
     - name: Esperar a API GRAPHQL estar Funcionando
-      run: sleep 8
+      run: sleep 5
 
     - name: Rodar os testes de API GRAPHQL
       run: npm run test-external-graphql
