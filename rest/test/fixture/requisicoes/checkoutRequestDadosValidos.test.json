@@ -1,0 +1,15 @@
+{
+
+  "items": [
+    { "productId": 2, "quantity": 1 }
+  ],
+
+  "freight": 7,
+  "paymentMethod": "cartao_credito",
+  "cardData": {
+    "number": "1509202568444",
+    "name": "Fernanda Vasconcelos",
+    "expiry": "12/2027",
+    "cvv": "999"
+  }
+}

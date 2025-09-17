@@ -4,7 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha 'test/**/*.test.js' --timeout 10000 --reporter mochawesome",
+    "test-external": "mocha \"rest/test/external/**/*.test.js\" --timeout 10000 --reporter mochawesome",
+    "test-controller": "mocha \"rest/test/controller/**/*.test.js\" --timeout 10000 --reporter mochawesome",
+    "test-external-graphql": "mocha \"graphql/test/external/**/*.test.js\" --timeout 10000 --reporter mochawesome",
+    "test-all": "mocha \"rest/test/external/**/*.test.js\" \"rest/test/controller/**/*.test.js\" \"graphql/test/external/**/*.test.js\" --timeout 10000 --reporter mochawesome --reporter-options reportDir=mochawesome-report,reportFilename=mochawesome",
+    "start": "node rest/server.js",
+    "start-graphql": "node graphql/server.js",
+    "start-all": "concurrently \"npm run start\" \"npm run start-graphql\""
   },
   "repository": {
     "type": "git",
@@ -20,9 +27,18 @@
   "homepage": "https://github.com/juliodelimas/pgats-2025-02-base#readme",
   "dependencies": {
     "apollo-server-express": "^3.13.0",
+    "chai": "^6.0.1",
     "express": "^4.21.2",
     "graphql": "^16.11.0",
     "jsonwebtoken": "^9.0.2",
+    "mocha": "^11.7.2",
+    "mochawesome": "^7.1.3",
+    "sinon": "^21.0.0",
+    "supertest": "^7.1.4",
     "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "dotenv": "^17.2.2"
   }
 }

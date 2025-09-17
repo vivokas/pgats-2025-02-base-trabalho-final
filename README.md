@@ -91,7 +91,9 @@ Variables:
   "password": "123456"
 }
 ```
+## Configuração
 
+Foi criado um arquivo chamado .env na pasta raiz contendo as propriedades BASE_URL_REST E BASE_URL_GRAPHQL, com a URL dos serviços.
 
 #### Checkout (boleto)
 Mutation (envie o token JWT no header Authorization: Bearer <TOKEN_JWT>):
