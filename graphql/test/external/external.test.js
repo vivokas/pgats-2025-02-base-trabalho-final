@@ -1,9 +1,9 @@
 const chai = require("chai");
 const expect = chai.expect;
 const request = require("supertest");
-require("dotenv").config();
+require('dotenv').config();
 
-describe("API Grahpql - External", function () {
+describe('API Grahpql - External', function () {
   it("1 - Deve retornar erro ao informar credenciais inválidas", async () => {
     const respostaEsperada = require("../fixture/quandoInformarUsuarioInvalido.test.json");
     const mutation = `
