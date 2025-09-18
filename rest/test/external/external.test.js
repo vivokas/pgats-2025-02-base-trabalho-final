@@ -7,6 +7,7 @@ describe('API Rest - POST/api/users/login', () => {
 
   before(async () => {
     respostaComErro = require('../fixture/respostas/quandoInformarEmailNaoCadastrado.json');
+
   });
 
   it('1 - Quando informar e-mail não cadastrado ou credenciais inválidas 401-Não Autorizado', async () => {
@@ -30,6 +31,7 @@ describe('API Rest - POST/api/users/login', () => {
       });
 
     expect(res.status).to.equal(200);
+    
   });
 });
 
